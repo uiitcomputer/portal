@@ -31,18 +31,37 @@
       animation:fadeIn 1s ease-in-out;
     }
     @keyframes fadeIn {from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:translateY(0);}}
+
+    /* New animation for shine */
+    @keyframes shine {
+      0% { background-position: 0%; }
+      100% { background-position: 200%; }
+    }
+
     header {
       background:linear-gradient(90deg,#ff85a2,#ffa8c6);
       padding:20px; display:flex; align-items:center; justify-content:space-between;
       flex-wrap:wrap; border-radius:0 0 18px 18px; box-shadow:0 4px 12px rgba(0,0,0,0.1); color:#fff;
     }
     .logo-img {width:110px; height:110px; border-radius:12px; object-fit:cover; border:2px solid #fff;}
+
     h1 {
-      font-family:'Poppins',sans-serif; font-size:1.7rem; margin-bottom:4px;
-      background:linear-gradient(90deg,#ffb6c1,#ff69b4);
-      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+      font-family:'Poppins',sans-serif; font-size:1.8rem; margin-bottom:4px;
+      background: linear-gradient(90deg, #FFD700, #FFA500, #FFD700);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shine 3s infinite linear;
+      background-size: 200% auto;
+      text-shadow: 1px 1px 2px rgba(255, 215, 0, 0.5);
     }
-    .header-title p {font-size:1rem; color:#ffeef3;}
+
+    .header-title p {
+      font-size:1rem;
+      color:#fff8dc;
+      text-shadow: 1px 1px 2px #d4af37;
+      font-weight: 500;
+    }
+
     .start-button {
       background:linear-gradient(45deg,#ff6f91,#ff9671); color:#fff; padding:10px 24px;
       text-decoration:none; border-radius:8px; font-size:1rem; font-weight:700;
