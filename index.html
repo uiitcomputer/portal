@@ -74,7 +74,14 @@
     .social-links a {color:#fff; font-size:1.2rem; transition:color .3s;} 
     .social-links a:hover {color:#ffa751;}
     .social-links a[aria-label] {text-decoration:none;}
-    @media(max-width:768px){body{margin:0 3vw;} header,.director,.footer-content{flex-direction:column;text-align:center;} h1{font-size:1.4rem;} .section-box{flex:1 1 100%;}}
+
+    @media(max-width:768px){
+      body{margin:0 3vw;}
+      header, .director, .footer-content {flex-direction:column; text-align:center;}
+      h1{font-size:1.4rem;}
+      .section-box{flex:1 1 100%;}
+      .container {padding:15px 10px;}
+    }
   </style>
 </head>
 <body>
@@ -94,8 +101,7 @@
     <div class="director-info">
       <strong>👨‍🏫 Director: रतन सिंह खरड़िया</strong><br>
       <strong>(RKCL Certified Career Coach)</strong><br>
-      <em>A visionary leader dedicated to digital learning and student success through quality computer education.
-</em>
+      <em>A visionary leader dedicated to digital learning and student success through quality computer education.</em>
     </div>
     <div class="itkg-code">ITGK Code: 31290177</div>
   </div>
@@ -154,7 +160,7 @@
 
   <div class="footer">
     <div class="footer-content">
-      <div id="visitorCount" class="visitor-count">Visitor Count: 0</div>
+      <div id="visitorCount" class="visitor-count">Visitor Count: 100</div>
       <div class="footer-banner">✨ डिजिटल राजस्थान की ओर – एक सशक्त कदम! ✨</div>
       <div class="social-links">
         <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
@@ -169,7 +175,7 @@
 
 <!-- Visitor Count Script -->
 <script>
-  let count = parseInt(localStorage.getItem('visitorCount') || "0", 10);
+  let count = parseInt(localStorage.getItem('visitorCount') || "99", 10); // Starts from 99
   count++;
   localStorage.setItem('visitorCount', count);
   window.addEventListener('DOMContentLoaded', () => {
