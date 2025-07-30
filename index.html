@@ -166,12 +166,42 @@
   </div>
 </div>
 
+<!-- Visitor Count Script -->
 <script>
   let count = parseInt(localStorage.getItem('visitorCount') || "0", 10);
   count++;
   localStorage.setItem('visitorCount', count);
   window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('visitorCount').textContent = `Visitor Count: ${count}`;
+  });
+</script>
+
+<!-- Security Script -->
+<script>
+  document.addEventListener('contextmenu', e => e.preventDefault());
+  document.addEventListener('cut', e => e.preventDefault());
+  document.addEventListener('copy', e => e.preventDefault());
+  document.addEventListener('paste', e => e.preventDefault());
+  document.addEventListener('keydown', function (e) {
+    if (
+      e.ctrlKey && ['c', 'x', 'u', 'v'].includes(e.key.toLowerCase()) ||
+      (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'i') ||
+      e.key === 'F12'
+    ) {
+      e.preventDefault();
+    }
+  });
+  document.addEventListener('selectstart', e => e.preventDefault());
+  window.addEventListener('keyup', function (e) {
+    if (e.key === 'PrintScreen') {
+      navigator.clipboard.writeText('');
+      alert('Screenshot disabled!');
+    }
+  });
+  document.addEventListener("visibilitychange", function () {
+    if (document.hidden) {
+      navigator.clipboard.writeText('');
+    }
   });
 </script>
 
